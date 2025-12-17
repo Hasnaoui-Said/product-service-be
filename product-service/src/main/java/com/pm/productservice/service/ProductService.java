@@ -12,8 +12,4 @@ public interface ProductService {
     ProductResponseDto getById(Long id);
 
     List<ProductResponseDto> getAll();
-
-    ProductResponseDto update(Long id, ProductRequestDto dto);
-
-    void delete(Long id);
 }
