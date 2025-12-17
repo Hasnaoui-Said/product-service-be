@@ -7,6 +7,6 @@ RUN mvn clean package -DskipTests
 # Stage 2: Create the final, lightweight runtime image
 FROM openjdk:17-jre-slim
 WORKDIR /app
-COPY --from=build /app/target/product-1.0.0.jar your-app-name.jar
+COPY --from=build /app/target/*.jar product-service.jar
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "your-app-name.jar"]
+ENTRYPOINT ["java", "-jar", "product-service.jar"]
