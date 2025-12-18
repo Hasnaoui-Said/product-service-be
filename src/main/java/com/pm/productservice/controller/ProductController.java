@@ -14,11 +14,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/products")
-@RequiredArgsConstructor
 @Validated
 public class ProductController {
 
     private final ProductService service;
+    ProductController(ProductService service) {
+        this.service = service;
+    }
 
     @PostMapping
     public ResponseEntity<ProductResponseDto> create(
